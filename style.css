@@ -1,0 +1,782 @@
+/* ==========================================================================
+   COSWA SUPERVISIÓN Y CONSTRUCCIÓN - ESTILO VISUAL CORPORATIVO
+   ========================================================================== */
+
+/* Fuentes: Helvetica como base (Arial/sans-serif como fallback) */
+:root {
+  /* Paleta de Colores Estricta */
+  --c-yellow: #F4C300;
+  --c-black: #121212;
+  --c-blue: #3A8DFF;
+  --c-green: #4CAF50;
+  --c-white: #FFFFFF;
+  
+  /* Tonos neutros para fondos y bordes */
+  --c-light-bg: #1A1A1A;
+  --c-border: #333333;
+  --c-text: #B0B0B0;
+  --c-text-light: #888888;
+  --c-card-bg: #1E1E1E;
+
+  /* Tipografía */
+  --font-base: 'Helvetica', Arial, sans-serif;
+  
+  /* Transiciones */
+  --t-fast: 0.2s ease;
+  --t-smooth: 0.4s ease;
+}
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-base);
+  font-size: 16px;
+  color: var(--c-white);
+  background-color: var(--c-black);
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Tipografía de Encabezados (Simulando Helvetica-Bold) */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--c-white);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-blue);
+  transition: var(--t-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clases Utilitarias */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.bg-light { background-color: #1A1A1A; }
+.bg-dark { background-color: var(--c-black); }
+.text-white { color: var(--c-white) !important; }
+.text-yellow { color: var(--c-yellow) !important; }
+.text-blue { color: var(--c-blue) !important; }
+.text-green { color: var(--c-green) !important; }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 10px; }
+.mt-3 { margin-top: 15px; }
+.mt-4 { margin-top: 25px; }
+.mb-1 { margin-bottom: 5px; }
+.w-100 { width: 100%; }
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background-color: var(--c-yellow);
+  margin: 0 auto 15px auto;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--t-smooth);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  background-color: var(--c-yellow);
+  color: var(--c-black);
+}
+
+.btn-primary:hover {
+  background-color: #d1a700;
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--c-white);
+  border-color: var(--c-white);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--c-white);
+  color: var(--c-black);
+}
+
+.btn-outline-blue {
+  background-color: transparent;
+  color: var(--c-blue);
+  border-color: var(--c-blue);
+}
+
+.btn-outline-blue:hover {
+  background-color: var(--c-blue);
+  color: var(--c-white);
+}
+
+/* Botón Flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: var(--c-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebd5b;
+  color: var(--c-white);
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--c-black);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  z-index: 999;
+  padding: 15px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo .logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--c-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--c-blue);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--c-yellow);
+  transition: var(--t-fast);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--c-white);
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0.4) 100%);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: var(--c-white);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #E0E0E0;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 15px;
+}
+
+/* Nosotros */
+.nosotros-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+}
+
+.nosotros-text h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.mision-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.mv-card {
+  background: var(--c-card-bg);
+  color: var(--c-text);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.mv-card h4 {
+  color: var(--c-white);
+}
+
+.mv-card i {
+  margin-bottom: 15px;
+}
+
+.valores-card {
+  background: var(--c-black);
+  color: var(--c-white);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.valores-card h4 {
+  color: var(--c-white);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--c-yellow);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.valores-list {
+  list-style: none;
+}
+
+.valores-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Servicios */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.servicio-card {
+  background: var(--c-card-bg);
+  color: var(--c-text);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: var(--t-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.servicio-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--c-white);
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.servicio-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.servicio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.servicio-card:hover .servicio-img img {
+  transform: scale(1.05);
+}
+
+.servicio-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.servicio-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--c-light-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-blue);
+  margin-bottom: 15px;
+}
+
+.servicio-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.servicio-content p {
+  color: var(--c-text-light);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.servicio-benefits {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.servicio-benefits li {
+  font-size: 0.85rem;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+.servicio-benefits li::before {
+  content: '•';
+  color: var(--c-yellow);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Proyectos */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--c-border);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--t-fast);
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--c-blue);
+  color: var(--c-white);
+  border-color: var(--c-blue);
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.proyecto-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 350px;
+}
+
+.caso-destacado {
+  grid-column: 1 / -1;
+  height: 450px;
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--t-smooth);
+}
+
+.proyecto-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(0deg, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0) 100%);
+  color: var(--c-white);
+}
+
+.proyecto-overlay h3 {
+  color: var(--c-white);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.proyecto-overlay p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.badge-destacado {
+  background: var(--c-yellow);
+  color: var(--c-black);
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Maquinaria */
+.maquinaria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.maquina-card {
+  display: flex;
+  background: var(--c-card-bg);
+  color: var(--c-text);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.maquina-content h4 {
+  color: var(--c-white);
+  margin-bottom: 5px;
+}
+
+.maquina-card img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.maquina-content {
+  padding: 20px;
+}
+
+/* Logística */
+.logistica-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: #1A1A1A; /* slightly lighter than black for depth */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.logistica-img {
+  flex: 1;
+}
+
+.logistica-img img {
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.logistica-content {
+  flex: 1;
+  padding: 40px 40px 40px 0;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.funciones-list ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.funciones-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Contacto */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+}
+
+.contacto-info {
+  background: var(--c-card-bg);
+  color: var(--c-text);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.contacto-info h4 {
+  color: var(--c-white);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.info-item i {
+  margin-top: 3px;
+}
+
+.contacto-form-wrapper {
+  background: var(--c-card-bg);
+  color: var(--c-text);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.form-group label {
+  color: var(--c-white);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  font-family: var(--font-base);
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--c-blue);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--c-black);
+  color: var(--c-white);
+  padding: 60px 0 20px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #AAAAAA;
+}
+
+.footer-links a:hover {
+  color: var(--c-yellow);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  color: var(--c-white);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.social-links a:hover {
+  background: var(--c-yellow);
+  color: var(--c-black);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-title { font-size: 3rem; }
+  .nosotros-grid { grid-template-columns: 1fr; }
+  .contacto-grid { grid-template-columns: 1fr; }
+  .logistica-wrapper { flex-direction: column; gap: 0; }
+  .logistica-content { padding: 40px; }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--c-white);
+    padding: 20px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  }
+  .nav-menu.active { display: flex; }
+  .hero-title { font-size: 2.5rem; }
+  .proyectos-grid { grid-template-columns: 1fr; }
+  .maquinaria-grid { grid-template-columns: 1fr; }
+  .maquina-card { flex-direction: column; }
+  .maquina-card img { width: 100%; height: 200px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-group-row { grid-template-columns: 1fr; }
+}
