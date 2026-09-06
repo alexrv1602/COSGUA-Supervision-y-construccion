@@ -1,13 +1,14 @@
 /* ==========================================================================
-   COSWA SUPERVISIÓN Y CONSTRUCCIÓN - ESTILO VISUAL CORPORATIVO
+   COSGUA SUPERVISIÓN Y CONSTRUCCIÓN - ESTILO VISUAL CORPORATIVO
    ========================================================================== */
 
 /* Fuentes: Helvetica como base (Arial/sans-serif como fallback) */
 :root {
   /* Paleta de Colores Estricta */
-  --c-yellow: #F4C300;
-  --c-black: #121212;
-  --c-blue: #3A8DFF;
+  --c-yellow: #F5C40F;
+  --c-black: #0A1C38;
+  --c-blue: #286596;
+  --c-blue-light: #57768F;
   --c-green: #4CAF50;
   --c-white: #FFFFFF;
   
@@ -77,7 +78,7 @@ img {
   padding: 80px 0;
 }
 
-.bg-light { background-color: #1A1A1A; }
+.bg-light { background-color: var(--c-light-bg); }
 .bg-dark { background-color: var(--c-black); }
 .text-white { color: var(--c-white) !important; }
 .text-yellow { color: var(--c-yellow) !important; }
@@ -581,7 +582,7 @@ img {
   display: flex;
   align-items: center;
   gap: 50px;
-  background: #1A1A1A; /* slightly lighter than black for depth */
+  background: var(--c-light-bg);
   border-radius: 12px;
   overflow: hidden;
 }
