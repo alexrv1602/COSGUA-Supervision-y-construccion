@@ -283,20 +283,24 @@ function initModalLightbox() {
 /* 9. Contact Form Simulation */
 function initContactForm() {
   const form = document.getElementById('contact-form');
-  const feedback = document.getElementById('form-feedback');
 
-  if (!form || !feedback) return;
+  if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('form-name')?.value || '';
+    const name = document.getElementById('nombre')?.value || '';
+    const phone = document.getElementById('telefono')?.value || '';
+    const email = document.getElementById('correo')?.value || '';
+    
+    const serviceEl = document.getElementById('servicio');
+    const service = serviceEl?.options[serviceEl.selectedIndex]?.text || '';
+    const message = document.getElementById('mensaje')?.value || '';
 
-    feedback.style.display = 'block';
-    feedback.textContent = `¡Gracias, ${name}! Hemos recibido su mensaje. Un ingeniero de Cosgua se comunicará en breve.`;
-    form.reset();
+    const subject = encodeURIComponent(`Nueva solicitud de logística de ${name}`);
+    const body = encodeURIComponent(
+      `Nombre: ${name}\nTeléfono: ${phone}\nCorreo: ${email}\nServicio de interés: ${service}\n\nMensaje:\n${message}`
+    );
 
-    setTimeout(() => {
-      feedback.style.display = 'none';
-    }, 5000);
+    window.location.href = `mailto:cosguaconstrucciones@cosguacon.com?subject=${subject}&body=${body}`;
   });
 }
