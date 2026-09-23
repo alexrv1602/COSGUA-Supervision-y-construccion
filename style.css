@@ -307,6 +307,27 @@ img {
   max-width: 800px;
 }
 
+/* Logo grande en el Hero */
+.hero-logo-wrapper {
+  margin-bottom: 28px;
+}
+
+.hero-logo-big {
+  height: 160px;
+  width: auto;
+  max-width: 420px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,0.55))
+    drop-shadow(0 4px 24px rgba(245,196,15,0.45));
+  animation: heroLogoFloat 3s ease-in-out infinite;
+}
+
+@keyframes heroLogoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
 .hero-title {
   font-size: 4rem;
   color: var(--c-white);
